@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
+@import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato', sans-serif !important;
+}
+
+.home {
+    background-image: url('../assets/wheat.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 105vh;
+}
+
+.home-text {
+    width: 320px;
+    position: relative;
+    margin: 0 auto;
+    top: 30%;
+}
+
+.home-text * {
+    color: white;
+    font-weight: lighter;
+    word-spacing: 2px;
+}
+
+.home-text h1 {
+    font-size: 3rem;
+}
+
+.home-text p {
+    line-height: 1.4rem;
+}
+
+.information {
+    position: relative;
+    height: 55vh;
+    z-index: 100;
+    margin: 50px 0 100px;
+}
+
+.info-content {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.info-main {
+    margin-top: 70px;
+    clear: both;
+}
+
+.information-bg {
+    background-image: url('../assets/white-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 55vh;
+    width: 100%;
+    position: absolute;
+    bottom: 17%;
+    left: 0;
+    z-index: -1;
+}
+
+.info-quote {
+    color: #fe992a;
+    font-style: italic;
+}
+
+p i.fas {
+    font-style: italic;
+}
+
+.quote-btns {
+    float: right;
+    display: flex;
+}
+
+.quote-btns button {
+    border: none;
+    outline: none;
+    padding: 6px 8px;
+    background-color: #fe992a;
+    color: white;
+    font-size: 0.7rem;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.quote-text {
+    position: relative;
+}
+
+.quote-text::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f10e";
+    bottom: -25px;
+    position: absolute;
+}
+
+.quote-text > i {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.quote-btns button:last-child {
+    background-color: #ffba6e;
+}
+
+.info-main h3 {
+    font-weight: 400;
+    color: #fe992a;
+}
+
+.info-main p {
+    word-spacing: 4px;
+    font-weight: 200;
+}
+
+@media(min-width: 481px) {
+    .info-quote, .info-main {
+        width: 350px;
+    }
+}
+
+@media (min-width: 768px) {
+    .home-text {
+        left: 18%;
+        top: 20%;
+        margin: 0;
+    }
+    .home-text>div {
+        width: 380px;
+    }
+    .information {
+        height: fit-content;
+    }
+    .information-bg {
+        height: 33vh;
+    }
+    .info-content {
+        width: 700px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .info-quote {
+        width: 200px;
+        display: inline-block;
+    }
+    .info-main {
+        width: 400px;
+        display: inline-block;
+        margin-top: 0;
+    }
+}
+
+@media(min-width: 992px) {
+    .info-content {
+        width: 900px
+    }
+    .info-quote {
+        width: 250px;
+    }
+    .info-main {
+        width: 480px;
+    }
+}
+
+@media(min-width: 1200px) {
+    .information {
+        padding: 0 18%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

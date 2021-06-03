@@ -1,0 +1,154 @@
+
+header {
+    display: flex;
+}
+
+nav {
+    display: none;
+}
+
+.logo {
+    text-align: center;
+    margin: 2rem 0 4rem;
+}
+
+.logo>img {
+    width: 64px;
+}
+
+.sidebar {
+    width: 160px;
+    height: 100vh;
+    background-color: #e87875;
+    display: block;
+    position: fixed;
+    transform: translate(-100%);
+    transition: all 0.3s linear;
+    z-index: 200;
+}
+
+.sidebar.close {
+    transform: translate(0);
+}
+
+.sidebar-toggler {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2rem;
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: white ;
+}
+
+.sidebar-toggler:hover {
+    transform: scale(1.1);
+}
+
+ul {
+    list-style: none;
+    padding-inline-start: 0px;
+}
+
+.nav-links li {
+    padding: 2rem 1.2rem;
+}
+
+.nav-links li:hover {
+    background-color: #d35b57;
+}
+
+li, li a {
+    text-decoration: none;
+    color: white;
+    transition-duration: 0.5s;
+}
+
+li:hover {
+    cursor: pointer;
+}
+
+.dropdown {
+    background: #e87875;
+    visibility: hidden;
+    display: none;
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+ul li:hover>ul, .dropdown:hover {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+    height: 200px;
+    background-color: transparent;
+}
+
+.dropdown li {
+    padding: 1rem 0;
+}
+
+.dropdown li:hover {
+    background-color: #b44541;
+}
+
+
+@media(min-width: 768px) {
+    nav {
+        display: flex;
+        margin: 0 auto;
+        width: 100%;
+        padding: 2%;
+        height: 64px;
+    }
+    nav ul {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        margin-left: 15%;
+        margin-right: 15%;
+        align-items: center;
+
+    }
+
+    .sidebar-toggler, .sidebar{
+        display: none;
+    }
+
+    .logo {
+        margin: 0;
+        position: absolute;
+    }
+
+    .nav-links li {
+        padding: 0;
+        position: relative;
+    }
+
+    .dropdown {
+        position: absolute;
+        width: 60px;
+        height: 100px;
+        margin: 0;
+        background-color: transparent;
+    }
+
+    .dropdown li {
+        margin: 15px 0;
+    }
+
+    .nav-links li:hover, 
+    .dropdown li:hover {
+        background-color: transparent;
+    }
+
+    header ul li {
+        transition: all 0.2s ease;
+    }
+
+    header ul li:hover {
+        transform: scale(1.1);
+    }
+}
