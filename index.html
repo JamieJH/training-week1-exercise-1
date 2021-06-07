@@ -55,9 +55,17 @@
                 </ul>
             </nav>
 
-            <button class="sidebar-toggler" title="button to toggle sidebar">
-                <i class="fas fa-bars"></i>
-            </button>
+            <div class="toggle-btns">
+                <button class="sidebar-toggler open" title="button to open sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <button class="sidebar-toggler close" title="button to close sidebar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+
 
             <aside class="sidebar">
                 <div class="logo">
@@ -92,8 +100,8 @@
                             <li><a href="#">Link 3</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Resources</a></li>
-                    <li><a href="#">Utilities</a></li>
+                    <li class="no-dropdown"><a href="#">Resources</a></li>
+                    <li class="no-dropdown"><a href="#">Utilities</a></li>
                 </ul>
         </header>
 

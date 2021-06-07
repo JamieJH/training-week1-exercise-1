@@ -1,10 +1,18 @@
+@import url("./variables.css");
+
+@font-face {
+    font-family: Droid Sans;
+    src: url("../assets/DroidSans.ttf");
+}
+
 footer {
     height: fit-content;
-    background-color: #e77774;
+    background-color: var(--theme-footer);
     display: flex;
-    color: white;
+    color: var(--white);
     flex-wrap: wrap;
     padding: 50px 5%;
+    font-family: "Droid Sans", sans-serif;
 }
 
 footer>div {
@@ -13,7 +21,7 @@ footer>div {
 }
 
 footer a {
-    color: white;
+    color: var(--white);
     text-decoration: none;
 }
 
@@ -65,7 +73,7 @@ footer li {
         margin-bottom: 2rem;
     }
     .contacts ul {
-        width: 40%;
+        width: 50%;
     }
 }
 

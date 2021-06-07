@@ -1,4 +1,4 @@
-
+@import url("./variables.css");
 header {
     display: flex;
 }
@@ -17,30 +17,56 @@ nav {
 }
 
 .sidebar {
-    width: 160px;
+    width: 100vw;
     height: 100vh;
-    background-color: #e87875;
+    background-color: var(--sidebar-transparent);
     display: block;
     position: fixed;
     transform: translate(-100%);
     transition: all 0.3s linear;
     z-index: 200;
+    text-align: center;
+    font-size: 1.2rem;
 }
 
 .sidebar.close {
     transform: translate(0);
 }
 
-.sidebar-toggler {
+.toggle-btns {
     position: fixed;
     top: 2rem;
     right: 2rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    z-index: 999;
+}
+
+.toggle-btns .sidebar-toggler {
+    position: absolute;
     font-size: 2rem;
     background: transparent;
     border-color: transparent;
+    color: var(--dark-grey);
     cursor: pointer;
-    transition: all 0.2s ease;
-    color: white ;
+    transition: all 0.3s ease;
+    opacity: 1;
+}
+
+.toggle-btns .sidebar-toggler.close {
+    transform: translateX(80px);
+    opacity: 0;
+}
+
+.toggle-btns.close .sidebar-toggler.open {
+    transform: translateX(80px);
+    opacity: 0;
+}
+
+.toggle-btns.close .sidebar-toggler.close {
+    transform: translateX(0);
+    opacity: 1;
 }
 
 .sidebar-toggler:hover {
@@ -56,34 +82,55 @@ ul {
     padding: 2rem 1.2rem;
 }
 
-.nav-links li:hover {
-    background-color: #d35b57;
+aside .nav-links > li {
+    padding: 0 0 2rem 0;
+    max-height: 30px;
+    transition: all 0.3s ease;
+}
+
+aside .dropdown li {
+    padding: 1rem 1.5rem;
+    position: relative;
+}
+
+aside .nav-links > li > a {
+    display: inline-block;
+    padding: 10px 0;
 }
 
 li, li a {
     text-decoration: none;
-    color: white;
-    transition-duration: 0.5s;
-}
-
-li:hover {
+    color: var(--white);
+    transition-duration: 0.3s;
     cursor: pointer;
 }
 
 .dropdown {
-    background: #e87875;
-    visibility: hidden;
-    display: none;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    background: var(--theme-footer);
+    max-height: 0;
     opacity: 0;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
+    display: none;
 }
 
-ul li:hover>ul, .dropdown:hover {
-    visibility: visible;
-    opacity: 1;
+aside .nav-links > li:hover>ul, .dropdown:hover {
     display: block;
-    height: 200px;
+    opacity: 1;
+    max-height: 180px;
     background-color: transparent;
+}
+
+
+aside .nav-links > li:hover {
+    max-height: 180px;
+    height: 180px;
+}
+
+aside .nav-links > li.no-dropdown:hover{
+    max-height: 30px;
 }
 
 .dropdown li {
@@ -91,9 +138,20 @@ ul li:hover>ul, .dropdown:hover {
 }
 
 .dropdown li:hover {
-    background-color: #b44541;
+    background-color: var(--link-hover-bg);
 }
 
+@media(min-width: 481px) {
+    .sidebar {
+        width: 180px;
+        background-color:  var(--theme-footer);
+        text-align: start;
+    }
+    aside .nav-links > li {
+        padding: 0 0 2rem 1.2rem;
+    }
+    
+}
 
 @media(min-width: 768px) {
     nav {
@@ -110,23 +168,18 @@ ul li:hover>ul, .dropdown:hover {
         margin-left: 15%;
         margin-right: 15%;
         align-items: center;
-
     }
-
-    .sidebar-toggler, .sidebar{
+    .sidebar-toggler, .sidebar {
         display: none;
     }
-
     .logo {
         margin: 0;
         position: absolute;
     }
-
     .nav-links li {
         padding: 0;
         position: relative;
     }
-
     .dropdown {
         position: absolute;
         width: 60px;
@@ -134,20 +187,15 @@ ul li:hover>ul, .dropdown:hover {
         margin: 0;
         background-color: transparent;
     }
-
     .dropdown li {
         margin: 15px 0;
     }
-
-    .nav-links li:hover, 
-    .dropdown li:hover {
+    .nav-links li:hover, .dropdown li:hover {
         background-color: transparent;
     }
-
     header ul li {
-        transition: all 0.2s ease;
+        transition: all 0.3s ease;
     }
-
     header ul li:hover {
         transform: scale(1.1);
     }

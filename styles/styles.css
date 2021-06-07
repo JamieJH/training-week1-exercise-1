@@ -1,3 +1,4 @@
+@import url("./variables.css");
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
 @import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
 
@@ -23,7 +24,7 @@ body {
 }
 
 .home-text * {
-    color: white;
+    color: var(--white);
     font-weight: lighter;
     word-spacing: 2px;
 }
@@ -40,7 +41,7 @@ body {
     position: relative;
     height: 55vh;
     z-index: 100;
-    margin: 50px 0 100px;
+    margin: 50px 0 30px;
 }
 
 .info-content {
@@ -49,8 +50,13 @@ body {
 }
 
 .info-main {
-    margin-top: 70px;
+    margin-top: 100px;
     clear: both;
+}
+
+.info-main p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-grey);
 }
 
 .information-bg {
@@ -66,7 +72,7 @@ body {
 }
 
 .info-quote {
-    color: #fe992a;
+    color: var(--theme-orange);
     font-style: italic;
 }
 
@@ -77,14 +83,15 @@ p i.fas {
 .quote-btns {
     float: right;
     display: flex;
+    margin-top: 20px;
 }
 
 .quote-btns button {
     border: none;
     outline: none;
     padding: 6px 8px;
-    background-color: #fe992a;
-    color: white;
+    background-color: var(--theme-orange);
+    color: var(--white);
     font-size: 0.7rem;
     border-radius: 0;
     cursor: pointer;
@@ -108,17 +115,20 @@ p i.fas {
 }
 
 .quote-btns button:last-child {
-    background-color: #ffba6e;
+    background-color: var(--theme-orange-lighter);
 }
 
 .info-main h3 {
     font-weight: 400;
-    color: #fe992a;
+    color: var(--theme-orange);
 }
 
 .info-main p {
     word-spacing: 4px;
     font-weight: 200;
+    word-spacing: 2px;
+    line-height: 20px;
+    font-size: 0.9rem;
 }
 
 @media(min-width: 481px) {
@@ -138,9 +148,12 @@ p i.fas {
     }
     .information {
         height: fit-content;
+        margin-bottom: 70px;
     }
     .information-bg {
-        height: 33vh;
+        /* height: 33vh; */
+        height: 22vh;
+        top: -10vh;
     }
     .info-content {
         width: 700px;

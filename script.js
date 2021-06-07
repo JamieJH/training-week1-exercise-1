@@ -1,6 +1,7 @@
-const toggleBtn = document.querySelector(".sidebar-toggler");
+const toggleBtns = document.querySelector(".toggle-btns");
 const sidebar = document.querySelector(".sidebar");
 
-toggleBtn.addEventListener("click", function () {
+toggleBtns.addEventListener("click", function () {
   sidebar.classList.toggle("close");
+  toggleBtns.classList.toggle("close")
 });
