@@ -116,6 +116,11 @@ li, li a {
     display: none;
 }
 
+nav .nav-links > li:hover > .dropdown {
+    display: block;
+    opacity: 1;
+}
+
 aside .nav-links > li:hover>ul, .dropdown:hover {
     display: block;
     opacity: 1;
