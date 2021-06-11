@@ -131,7 +131,7 @@ p i.fas {
 }
 
 @media(min-width: 481px) {
-    .info-quote, .info-main {
+    .info-content {
         width: 350px;
     }
 }
@@ -139,7 +139,7 @@ p i.fas {
 @media (min-width: 768px) {
     .home-text {
         left: 18%;
-        top: 20%;
+        top: 100px;
         margin: 0;
     }
     .home-text>div {
