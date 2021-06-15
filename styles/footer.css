@@ -92,7 +92,6 @@ footer li {
 
 @media(min-width: 1024px) {
     footer {
-        padding-left: calc(50% - 450px);
-        padding-right: calc(50% - 450px);
+        padding: 50px calc(50% - 450px);
     }
 }
